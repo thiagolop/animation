@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'card/widgets/build_card.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -69,55 +71,9 @@ class _HomePageState extends State<HomePage> {
                     location = Offset.zero;
                     setState(() {});
                   },
-                  child: Container(
-                    height: cardHeight,
-                    width: cardWidth,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 20, left: 20),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.grey.shade500,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            const SizedBox(width: 40),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  height: 20,
-                                  width: 80 * 2,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.shade500,
-                                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                                  ),
-                                ),
-                                const SizedBox(height: 20),
-                                Container(
-                                  height: 20,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.shade500,
-                                    borderRadius: const BorderRadius.all(Radius.circular(20)),
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                  child: CreditCardPage(
+                    cardHeight: cardHeight,
+                    cardWidth: cardWidth,
                   ),
                 ),
               ),
